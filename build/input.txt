@@ -1,0 +1,35 @@
+# Calculate method (NACHTS, GALERKIN, BOTH)
+  METHOD = BOTH
+
+# Basic flow parameters
+  # Basic flow (SIEGEL or POLHAUSEN)
+    FLOW     = POLHAUSEN
+  # Prandtl number 
+    PRANDTL  = 6.7
+    
+# Calculation parameters
+  # Set zeros edge - length (dimensionless). According to Nachts method - the distance after which basic flow parameters : F', F''' and H' is zero:
+  #         for example Polhausen flow for Pr = 0.73 this length ~ 6.0; Pr = 6.7 - ~5.0
+    ZEROS_EDGE = 5.4
+  # JMAX - variable to make sure in correct choice ZEROS_EDGE
+    JMAX       = 6000
+  # dh - step length for BASIC FLOW, Nachtsheim method step length = 2 * dh;
+    dh         = 0.001
+
+# Methods settings
+  # Galerkin: Power [0 or 2]
+    POL_POWER = 2 
+  # Galerkin: basis functions count
+    FUN_COUNT = 7
+  # Galerkin: start first funtion order
+    START_OR  = 0
+  # Nachts:  Re_max, dRe   - max Reynolds number, Re addition
+     RE       = 50, 10
+  # Nachts:  wav_max, dwav - max wavenumber, 
+     WAVNUM   = 0.36, 0.1
+
+# Start point (or single for Galerkin)
+  # Re
+    RE        = 41
+  # wavnum
+    WAVNUM    = 0.35
